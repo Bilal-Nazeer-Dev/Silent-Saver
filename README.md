@@ -2,6 +2,11 @@
 
 > A smart, automated Android application that manages your phone's ringer profiles based on **Location** and **Time**. Never disturb a meeting or prayer again, while ensuring emergency contacts can always reach you.
 
+![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![Platform](https://img.shields.io/badge/Platform-Android-green)
+![Language](https://img.shields.io/badge/Language-Kotlin%20%7C%20XML-blue)
+![Tech](https://img.shields.io/badge/Tech-Wi--Fi%20Direct%20%7C%20Sockets-orange)
+
 ## 📱 Project Overview
 
 **SilentSaver** (also known as SilentActivator) solves the binary problem of smartphone notifications: either being too loud in sensitive places or missing critical calls when silenced.
