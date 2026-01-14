@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_indigo">#3949AB</color> 
+    <color name="primary_indigo_light">#7986CB</color>
+    <color name="teal_accent">#1DE9B6</color>
+
+    <color name="background_off_white">#121212</color>
+    
+    <color name="surface_white">#1E1E1E</color> 
+
+    <color name="text_primary">#E0E0E0</color>
+    
+    <color name="text_secondary">#B0BEC5</color>
+    <color name="text_inverse">#121212</color>
+
+    <color name="white">#000000</color> <color name="black">#FFFFFF</color>
+</resources>

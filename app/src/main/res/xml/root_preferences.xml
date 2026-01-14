@@ -1,0 +1,49 @@
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.preference.PreferenceCategory app:title="General">
+        <androidx.preference.SwitchPreferenceCompat
+            app:key="dark_mode"
+            app:title="Dark Mode"
+            app:summary="Enable dark theme for the app"
+            app:defaultValue="false" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:key="notifications"
+            app:title="Notifications"
+            app:summary="Receive alerts when phone is silenced"
+            app:defaultValue="true" />
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory app:title="Automation">
+        <androidx.preference.EditTextPreference
+            app:key="default_radius"
+            app:title="Default Geofence Radius"
+            app:summary="Enter radius in meters (e.g., 50)"
+            app:defaultValue="50"
+            android:inputType="number" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            app:key="vibrate_on_silence"
+            app:title="Vibrate on Silence"
+            app:summary="Vibrate phone when entering silent mode"
+            app:defaultValue="true" />
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory app:title="About">
+        <androidx.preference.Preference
+            app:key="version"
+            app:title="App Version"
+            app:summary="1.0.0"
+            app:selectable="false" />
+
+        <androidx.preference.Preference
+            app:key="privacy_policy"
+            app:title="Privacy Policy" />
+
+        <androidx.preference.Preference
+            app:key="feedback"
+            app:title="Send Feedback" />
+    </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>
