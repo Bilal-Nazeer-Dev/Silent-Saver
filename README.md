@@ -37,7 +37,7 @@ It utilizes the **Android Geofencing API** and **AlarmManager** to create a "Set
 | --- | --- | --- |
 | <img src="screenshots/dashboard.jpeg" width="200"/> | <img src="screenshots/map.jpeg" width="200"/> | <img src="screenshots/schedule.jpeg" width="200"/> |
 
-*(Note: Upload your screenshots to a folder named `screenshots` in your repo)*
+
 
 ## 🛠️ Technical Stack
 
