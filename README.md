@@ -5,7 +5,6 @@
 ![Project Status](https://img.shields.io/badge/Status-Completed-success)
 ![Platform](https://img.shields.io/badge/Platform-Android-green)
 ![Language](https://img.shields.io/badge/Language-Kotlin%20%7C%20XML-blue)
-![Tech](https://img.shields.io/badge/Tech-Wi--Fi%20Direct%20%7C%20Sockets-orange)
 
 ## 📱 Project Overview
 
