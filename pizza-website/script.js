@@ -94,11 +94,17 @@ filterBtns.forEach(btn => {
 });
 
 // add keyframe dynamically for card pop
-const styleSheet = document.styleSheets[0];
-styleSheet.insertRule(`@keyframes cardPop {
-  from { opacity:0; transform:scale(.9) translateY(10px); }
-  to   { opacity:1; transform:none; }
-}`, styleSheet.cssRules.length);
+try {
+  const styleSheet = Array.from(document.styleSheets).find(s => {
+    try { return s.cssRules !== null; } catch { return false; }
+  });
+  if (styleSheet) {
+    styleSheet.insertRule(`@keyframes cardPop {
+      from { opacity:0; transform:scale(.9) translateY(10px); }
+      to   { opacity:1; transform:none; }
+    }`, styleSheet.cssRules.length);
+  }
+} catch (_) { /* animation gracefully degrades if insertion fails */ }
 
 /* ---------- Cart ---------- */
 const cartItems   = [];
@@ -141,11 +147,14 @@ window.removeItem = function(index) {
 document.querySelectorAll('.add-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const card  = btn.closest('.menu-card');
+    const cardImgEl = card.querySelector('.card-img');
+    // Use the first text node to get only the emoji, excluding any badge text
+    const emojiNode = Array.from(cardImgEl.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
     cartItems.push({
       name:  card.querySelector('h3').textContent,
       desc:  card.querySelector('p').textContent,
       price: parseFloat(card.querySelector('.card-price').textContent.replace('$', '')),
-      emoji: card.querySelector('.card-img').textContent.trim(),
+      emoji: emojiNode ? emojiNode.textContent.trim() : '🍕',
     });
     updateCartUI();
     // animate cart button
@@ -160,6 +169,15 @@ document.getElementById('cart-close').addEventListener('click', () => cartPanel.
 /* ---------- Reservation form ---------- */
 document.getElementById('reservation-form').addEventListener('submit', (e) => {
   e.preventDefault();
+  const timeVal = document.getElementById('r-time').value;
+  if (timeVal) {
+    const [h, m] = timeVal.split(':').map(Number);
+    const mins = h * 60 + m;
+    if (mins < 11 * 60 || mins > 22 * 60 + 30) {
+      showToast('⏰ Please pick a time between 11:00 AM and 10:30 PM.');
+      return;
+    }
+  }
   showToast('🎉 Table reserved! See you soon.');
   e.target.reset();
 });
